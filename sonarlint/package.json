@@ -1,0 +1,18 @@
+{
+  "name": "sonarlint",
+  "main": "./lib/sonarlint",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "sonarlint:toggle"
+  },
+  "repository": "https://github.com/atom/sonarlint",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
