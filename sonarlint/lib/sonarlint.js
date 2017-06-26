@@ -47,8 +47,9 @@ class SonarLintLanguageServer extends AutoLanguageClient {
       capabilities: {},
       rootPath: projectPath,
       initializationOptions: {
-        telemetryStorage: '/tmp/sonarlint-telemetry-atom',
-        disableTelemetry: false
+        telemetryStorage: "/tmp/sonarlint-telemetry-atom",
+        disableTelemetry: false,
+        lspVersion: "2"
       }
     }
   }
