@@ -1,18 +1,57 @@
 {
+  "activationHooks": ["language-python:grammar-used"],
   "name": "sonarlint",
   "main": "./lib/sonarlint",
   "version": "0.0.0",
   "description": "A short description of your package",
   "keywords": [
   ],
-  "activationCommands": {
-    "atom-workspace": "sonarlint:toggle"
-  },
   "repository": "https://github.com/atom/sonarlint",
   "license": "MIT",
   "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+    "atom": ">=1.17.0 <2.0.0"
   },
   "dependencies": {
+    "atom-languageclient": "^0.1.0",
+    "vscode-jsonrpc": "^3.2.0"
+  },
+  "consumedServices": {
+    "linter-indie": {
+      "versions": {
+        "2.0.0": "consumeLinterV2"
+      }
+    },
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    },
+    "nuclide-datatip.provider": {
+      "versions": {
+        "0.0.0": "consumeDatatip"
+      }
+    }
+  },
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provideAutocomplete"
+      }
+    },
+    "nuclide-outline-view": {
+      "versions": {
+        "0.0.0": "provideOutlines"
+      }
+    },
+    "nuclide-definition-provider": {
+      "versions": {
+        "0.0.0": "provideDefinitions"
+      }
+    },
+    "nuclide-find-references.provider": {
+      "versions": {
+        "0.0.0": "provideFindReferences"
+      }
+    }
   }
 }

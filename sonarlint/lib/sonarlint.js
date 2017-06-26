@@ -1,6 +1,7 @@
 'use babel';
 
-import SonarlintView from './sonarlint-view';
+import SonarLintLanguageServer from './sonarlint-ls';
+const {AutoLanguageClient} = require('atom-languageclient')
 import { CompositeDisposable } from 'atom';
 
 export default {
@@ -9,12 +10,40 @@ export default {
   modalPanel: null,
   subscriptions: null,
 
+  poc_clean() {
+    console.log('poc_clean');
+
+    // throws "Class constructor AutoLanguageClient cannot be invoked without 'new'"
+    //var ls = new SonarLintLanguageServer();
+  },
+
+  poc_messy() {
+    AutoLanguageClient.prototype.getGrammarScopes = SonarLintLanguageServer.prototype.getGrammarScopes;
+    AutoLanguageClient.prototype.getLanguageName = SonarLintLanguageServer.prototype.getLanguageName;
+    AutoLanguageClient.prototype.getServerName = SonarLintLanguageServer.prototype.getServerName;
+    AutoLanguageClient.prototype.startServerProcess = SonarLintLanguageServer.prototype.startServerProcess;
+    AutoLanguageClient.prototype.spawnServer = SonarLintLanguageServer.prototype.spawnServer;
+    AutoLanguageClient.prototype.createServerConnection = SonarLintLanguageServer.prototype.createServerConnection;
+    AutoLanguageClient.prototype.getInitializeParams = (projectPath, process) => {
+      console.log('getInitializeParams')
+      return {
+        processId: process.pid,
+        capabilities: {},
+        rootPath: projectPath,
+        initializationOptions: {
+          telemetryStorage: '/tmp/sonarlint-telemetry-atom',
+          disableTelemetry: false
+        }
+      }
+    }
+    var sls = new AutoLanguageClient();
+    sls.activate();
+  },
+
   activate(state) {
-    this.sonarlintView = new SonarlintView(state.sonarlintViewState);
-    this.modalPanel = atom.workspace.addModalPanel({
-      item: this.sonarlintView.getElement(),
-      visible: false
-    });
+    console.log("activated");
+    //this.poc_clean();
+    this.poc_messy();
 
     // Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     this.subscriptions = new CompositeDisposable();
@@ -26,24 +55,12 @@ export default {
   },
 
   deactivate() {
-    this.modalPanel.destroy();
     this.subscriptions.dispose();
-    this.sonarlintView.destroy();
-  },
-
-  serialize() {
-    return {
-      sonarlintViewState: this.sonarlintView.serialize()
-    };
   },
 
   toggle() {
     console.log('Sonarlint was toggled!');
-    return (
-      this.modalPanel.isVisible() ?
-      this.modalPanel.hide() :
-      this.modalPanel.show()
-    );
+    //var server = new SonarLintLanguageServer();
   }
 
 };
