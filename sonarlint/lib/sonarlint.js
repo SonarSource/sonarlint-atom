@@ -8,7 +8,7 @@ const {AutoLanguageClient} = require('atom-languageclient')
 class SonarLintLanguageServer extends AutoLanguageClient {
   getGrammarScopes () {
     console.log('getGrammarScopes')
-    return ['source.js', 'source.py', 'text.html.php', 'source.php'] }
+    return ['source.js', 'source.python', 'text.html.php'] }
   getLanguageName () {
     console.log('getLanguageName')
     return 'whatever' }
