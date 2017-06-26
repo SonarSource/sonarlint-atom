@@ -1,5 +1,4 @@
 {
-  "activationHooks": ["language-python:grammar-used"],
   "name": "sonarlint",
   "main": "./lib/sonarlint",
   "version": "0.0.0",
