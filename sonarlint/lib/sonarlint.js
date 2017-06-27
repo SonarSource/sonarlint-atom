@@ -6,13 +6,9 @@ const rpc = require('vscode-jsonrpc')
 const {AutoLanguageClient} = require('atom-languageclient')
 
 class SonarLintLanguageServer extends AutoLanguageClient {
-  getGrammarScopes () {
-    console.log('getGrammarScopes')
-    return ['source.js', 'source.python', 'text.html.php'] }
-  getLanguageName () {
-    console.log('getLanguageName')
-    return 'whatever' }
-  getServerName () { return 'SonarLint Language Server' }
+  getGrammarScopes () { return ['source.js', 'source.python', 'text.html.php'] }
+  getLanguageName () { return 'JavaScript, Python, PHP' }
+  getServerName () { return 'SonarLint' }
 
   startServerProcess () {
     console.log('startServerProcess');
@@ -52,6 +48,11 @@ class SonarLintLanguageServer extends AutoLanguageClient {
         lspVersion: "2"
       }
     }
+  }
+
+  activate() {
+    super.activate();
+    this.name = this.getServerName();
   }
 }
 
