@@ -5,6 +5,7 @@ const path = require('path')
 const rpc = require('vscode-jsonrpc')
 const {AutoLanguageClient} = require('atom-languageclient')
 
+
 class SonarLintLanguageServer extends AutoLanguageClient {
   getGrammarScopes () { return ['source.js', 'source.python', 'text.html.php'] }
   getLanguageName () { return 'JavaScript, Python, PHP' }
@@ -14,8 +15,7 @@ class SonarLintLanguageServer extends AutoLanguageClient {
     console.log('startServerProcess');
     const serverHome = path.join(__dirname, '..', 'server')
     const command = 'java.sh'
-    const port = 1234
-    const args = ['-jar', 'sonarlint-ls.jar', '' + port]
+    const args = ['-jar', 'sonarlint-ls.jar']
     let process
 
     return new Promise((resolve, reject) => {
@@ -24,7 +24,8 @@ class SonarLintLanguageServer extends AutoLanguageClient {
         this.socket = socket
         resolve(process)
       })
-      server.listen(port, '127.0.0.1', () => {
+      server.listen(0, '127.0.0.1', () => {
+        args.push(server.address().port)
         process = this.spawnServer(command, args, serverHome)
       })
     })
