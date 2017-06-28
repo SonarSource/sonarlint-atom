@@ -45,9 +45,7 @@ class SonarLintLanguageServer extends AutoLanguageClient {
       initializationOptions: {
         // TODO
         telemetryStorage: "/tmp/sonarlint-telemetry-atom",
-        disableTelemetry: false,
-        // TODO eliminate if possible
-        lspVersion: "2"
+        disableTelemetry: false
       }
     }
   }
