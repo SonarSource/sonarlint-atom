@@ -52,11 +52,6 @@ class SonarLintLanguageServer extends AutoLanguageClient {
     }
   }
 
-  activate() {
-    super.activate()
-    this.name = this.getServerName()
-  }
-
   newLinterPushV2Adapter(connection) {
     return new CustomLinterPushV2Adapter(connection)
   }
