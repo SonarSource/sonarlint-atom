@@ -69,7 +69,8 @@ class CustomLinterPushV2Adapter extends LinterPushV2Adapter {
 
   diagnosticToV2Message(path, diagnostic) {
     var message = super.diagnosticToV2Message(path, diagnostic)
-    this.setRuleDetailsUrl(message, diagnostic);
+    this.setRuleDetailsUrl(message, diagnostic)
+    this.setSolutions(message)
     return message
   }
 
@@ -80,6 +81,20 @@ class CustomLinterPushV2Adapter extends LinterPushV2Adapter {
       var ruleId = languageAndRuleId[1]
       message.url = `${ruleDetailsBaseUrl}&ruleId=${ruleId}&language=${language}`
     }
+  }
+
+  setSolutions(message) {
+    // TODO add dependency: intentions
+    // usage: move cursor on underliend area, press alt + enter to show intentions,
+    //        option "Open rule details" should pop up, press enter again to do it
+    message.solutions = [
+      {
+        title: "Open rule details",
+        position: message.location.position,
+        // TODO
+        apply: (() => { alert("todo"); })
+      }
+    ]
   }
 }
 
