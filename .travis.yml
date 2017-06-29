@@ -1,0 +1,12 @@
+sudo: false
+
+language: node_js
+node_js:
+- "6"
+
+script:
+- npm install
+
+notifications:
+  email: false
+  on_start: always
