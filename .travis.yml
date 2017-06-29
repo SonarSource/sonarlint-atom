@@ -4,9 +4,15 @@ language: node_js
 node_js:
 - "6"
 
+before_install:
+- npm install -g gulp-cli
+
 script:
 - npm install
+- gulp clean deploy
 
 notifications:
   email: false
+  webhooks:
+    - secure: "tHwURbBjCJs9kPFnPmYq3O9nUuZi0aw3QEEDPx+53d0DaWChWgKuGxTP7sl9JFY5OT70ZpK81xrHVjjR61Yy5vvX3XYl78cGZdV3FyQi3uC/QQHXKBDM1lOL+9w5gCHsFw1fb2RJpzYSM7u/IocJS8+MGETjQ929LXVJNptRy4326YcrFDQFeOKGkSBj95XZFxPnx9QSkvEIQYqJJc05TjQEzqP7keTk8OUTWObeXVVMdXSZqkOnLMQ+pEavbwKhsEfyNW5zN3J85kLJefVka8gAdKYB25geoHcSnAK4+6tKhsMmk9zecNwCP9TxCFXypQ4D6evdEVZHdiUlQmEKRWdS9IQg3KmSelG1xfPEfKcCmquDUqd+W2P/AR+Z1WDkgs89Af0EBup3RQfq16sXU5JCC3A7DdJjjbhFX1znH2JsTVUBsD3kAuaNwgTwvrZzZHHgS2NLjWrMD4J2Pxf+wVrg6oCss17j2EelIEML+HoRLJi4ZEL+ZbwZJ8keG8uO7xvLvzANJ6hdALE6FKbcl2ZJe2aJu8BMgfrjFGj182OvUaXFrqF1sOa5xYaBl1qUB5MmxIGAfJCyDWP8fZmuGu9sBo4a/2ERpPEOZf/3Yw79aE35agHPXWCljFumuCp/WOXJQv6EHrkfHYc4/PCWmVAoQlxNhESU7yBMAiTyNp4="
   on_start: always
