@@ -5,6 +5,9 @@
 npm-debug.log
 node_modules
 
+# packaging
+dist
+
 # project work files
 server
 analyzers

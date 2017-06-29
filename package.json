@@ -21,7 +21,13 @@
     "Linters"
   ],
   "keywords": [
-    "code analysis", "linters", "lint", "php", "python", "javascript", "js"
+    "code analysis",
+    "linters",
+    "lint",
+    "php",
+    "python",
+    "javascript",
+    "js"
   ],
   "qna": "https://groups.google.com/forum/#!forum/sonarlint",
   "main": "./lib/sonarlint",
@@ -38,5 +44,13 @@
         "2.0.0": "consumeLinterV2"
       }
     }
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-artifactory-upload": "^1.3.0",
+    "gulp-bump": "^2.7.0",
+    "gulp-util": "^3.0.8",
+    "gulp-zip": "^4.0.0"
   }
 }
