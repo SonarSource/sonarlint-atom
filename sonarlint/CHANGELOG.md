@@ -1,3 +1,6 @@
-## 0.1.0 - First Release
-* Every feature added
-* Every bug fixed
+## 1.0.0
+* First release
+* On-the-fly analysis of JavaScript, Python and PHP
+* SonarJS 3.0
+* SonarPHP 2.10
+* SonarPython 1.8
