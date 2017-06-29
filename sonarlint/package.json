@@ -22,7 +22,7 @@
     "Linters"
   ],
   "keywords": [
-    "code analysis", "linters"
+    "code analysis", "linters", "lint", "php", "python", "javascript", "js"
   ],
   "qna": "https://groups.google.com/forum/#!forum/sonarlint",
   "main": "./lib/sonarlint",
