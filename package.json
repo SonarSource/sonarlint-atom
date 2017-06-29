@@ -42,38 +42,6 @@
       "versions": {
         "2.0.0": "consumeLinterV2"
       }
-    },
-    "status-bar": {
-      "versions": {
-        "^1.0.0": "consumeStatusBar"
-      }
-    },
-    "nuclide-datatip.provider": {
-      "versions": {
-        "0.0.0": "consumeDatatip"
-      }
-    }
-  },
-  "providedServices": {
-    "autocomplete.provider": {
-      "versions": {
-        "2.0.0": "provideAutocomplete"
-      }
-    },
-    "nuclide-outline-view": {
-      "versions": {
-        "0.0.0": "provideOutlines"
-      }
-    },
-    "nuclide-definition-provider": {
-      "versions": {
-        "0.0.0": "provideDefinitions"
-      }
-    },
-    "nuclide-find-references.provider": {
-      "versions": {
-        "0.0.0": "provideFindReferences"
-      }
     }
   }
 }
