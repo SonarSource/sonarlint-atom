@@ -32,11 +32,19 @@
   "qna": "https://groups.google.com/forum/#!forum/sonarlint",
   "main": "./lib/sonarlint",
   "files": [
-    "server/sonarlint-ls.jar"
+    "lib",
+    "images",
+    "files"
   ],
   "dependencies": {
     "vscode-jsonrpc": "^3.2.0",
     "atom-languageclient": "janos-ss/atom-languageclient#real-master"
+  },
+  "bundledDependencies": [
+    "atom-languageclient"
+  ],
+  "scripts": {
+    "prepublish": "node ./scripts/setup.js"
   },
   "consumedServices": {
     "linter-indie": {
