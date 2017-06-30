@@ -37,6 +37,7 @@
     "files"
   ],
   "dependencies": {
+    "atom-linter": "^10.0.0",
     "atom-languageclient": "SonarSource/atom-languageclient#f1a0372e163191213edeefa13c8d3f8e7cf7a367"
   },
   "bundledDependencies": [
