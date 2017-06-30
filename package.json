@@ -38,7 +38,7 @@
   ],
   "dependencies": {
     "vscode-jsonrpc": "^3.2.0",
-    "atom-languageclient": "janos-ss/atom-languageclient#real-master"
+    "atom-languageclient": "SonarSource/atom-languageclient#f1a0372e163191213edeefa13c8d3f8e7cf7a367"
   },
   "bundledDependencies": [
     "atom-languageclient"
