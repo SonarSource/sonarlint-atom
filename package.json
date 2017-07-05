@@ -64,6 +64,11 @@
     "gulp-zip": "^4.0.0"
   },
   "configSchema": {
+    "javaHome": {
+      "type": "string",
+      "default": "",
+      "order": 1
+    },
     "testFilePattern": {
       "type": "string",
       "default": "{**/test/**,**/*test*,**/*Test*}",
