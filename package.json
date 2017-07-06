@@ -37,13 +37,17 @@
     "files"
   ],
   "dependencies": {
-    "atom-languageclient": "SonarSource/atom-languageclient#f1a0372e163191213edeefa13c8d3f8e7cf7a367",
+    "atom-languageclient": "SonarSource/atom-languageclient#43a843f5fa80b909b9a80d88409bfb92ad94350a",
     "atom-linter": "^10.0.0",
     "expand-home-dir": "0.0.3",
-    "find-java-home": "^0.1.4"
+    "find-java-home": "^0.1.4",
+    "path-exists": "^3.0.0"
   },
   "bundledDependencies": [
-    "atom-languageclient"
+    "atom-languageclient",
+    "expand-home-dir",
+    "find-java-home",
+    "path-exists"
   ],
   "scripts": {
     "prepublish": "node ./scripts/setup.js"
@@ -64,6 +68,11 @@
     "gulp-zip": "^4.0.0"
   },
   "configSchema": {
+    "javaHome": {
+      "type": "string",
+      "default": "",
+      "order": 1
+    },
     "testFilePattern": {
       "type": "string",
       "default": "{**/test/**,**/*test*,**/*Test*}",
