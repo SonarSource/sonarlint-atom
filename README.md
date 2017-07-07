@@ -8,13 +8,13 @@ Simply open a JS, PHP or Python file, start coding, and you will start seeing is
 
 ![sonarlint on-the-fly](images/sonarlint-atom.gif)
 
-You can access the detailed rule description by hovering over a highlighted error, and right-click on the link icon. This will open the page of the rule description on [sonarlint.org][1].
+You can access the detailed rule description by hovering over a highlighted error, and right-click on the link icon. This will open the page of the rule description on [sonarlint.org][rules].
 
-You will benefit from the following code analyzers: [SonarJS](https://redirect.sonarsource.com/plugins/javascript.html), [SonarPHP](https://redirect.sonarsource.com/plugins/php.html) and [SonarPython](https://redirect.sonarsource.com/plugins/python.html). You can find all available rules descriptions on the dedicated [SonarLint website](http://www.sonarlint.org/atom/rules/index.html).
+You will benefit from the following code analyzers: [SonarJS][sonar-js], [SonarPHP][sonar-php] and [SonarPython][sonar-python]. You can find all available rules descriptions on the dedicated [SonarLint website][rules].
 
 ## Requirements
 
-SonarLint for Atom uses [Linter][2] to display the list of errors and to produce the highlights in the editor.
+SonarLint for Atom uses [Linter][linter] to display the list of errors and to produce the highlights in the editor.
 
 You also need a Java Runtime (JRE) 8 installed on your computer.
 
@@ -30,7 +30,11 @@ SonarLint for Atom is open source under the LGPL v3 license. Feel free to submit
 
 ## Feedback
 
-The preferred way to discuss about SonarLint is by posting on the [SonarLint Google Group](https://groups.google.com/forum/#!forum/sonarlint). Feel free to ask questions, report issues, and give suggestions on the Google Group.
+The preferred way to discuss about SonarLint is by posting on the [SonarLint Google Group][ggroups]. Feel free to ask questions, report issues, and give suggestions on the Google Group.
 
-[1]: http://www.sonarlint.org/atom/rules/index.html
-[2]: https://atom.io/packages/linter
+[rules]: http://www.sonarlint.org/atom/rules/index.html
+[linter]: https://atom.io/packages/linter
+[sonar-js]: https://redirect.sonarsource.com/plugins/javascript.html
+[sonar-python]: https://redirect.sonarsource.com/plugins/python.html
+[sonar-php]: https://redirect.sonarsource.com/plugins/php.html
+[ggroups]: https://groups.google.com/forum/#!forum/sonarlint
