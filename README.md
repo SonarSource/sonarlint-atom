@@ -1,5 +1,36 @@
-# sonarlint package
+# SonarLint for Atom
 
-A short description of your package.
+SonarLint is an Atom extension that provides on-the-fly feedback to developers on new bugs and quality issues injected into JavaScript, PHP and Python code.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+## How it works
+
+Simply open a JS, PHP or Python file, start coding, and you will start seeing issues reported by SonarLint. Issues are highlighted in your code, and also listed in the 'Linter' panel.
+
+![sonarlint on-the-fly](images/sonarlint-atom.gif)
+
+You can access the detailed rule description by hovering over a highlighted error, and right-click on the link icon. This will open the page of the rule description on [sonarlint.org][1].
+
+You will benefit from the following code analyzers: [SonarJS](https://redirect.sonarsource.com/plugins/javascript.html), [SonarPHP](https://redirect.sonarsource.com/plugins/php.html) and [SonarPython](https://redirect.sonarsource.com/plugins/python.html). You can find all available rules descriptions on the dedicated [SonarLint website](http://www.sonarlint.org/atom/rules/index.html).
+
+## Requirements
+
+SonarLint for Atom uses [Linter][2] to display the list of errors and to produce the highlights in the editor.
+
+You also need a Java Runtime (JRE) 8 installed on your computer.
+
+SonarLint should automatically find it but you can also explicitly set the path where the JRE is installed using the 'sonarlint.javaHome' variable in Atom settings (`~/.atom/config.cson`). For example:
+
+    "*":
+      sonarlint:
+        javaHome: "/path/to/java/home"
+
+## Contributions and license
+
+SonarLint for Atom is open source under the LGPL v3 license. Feel free to submit Pull Requests.
+
+## Feedback
+
+The preferred way to discuss about SonarLint is by posting on the [SonarLint Google Group](https://groups.google.com/forum/#!forum/sonarlint). Feel free to ask questions, report issues, and give suggestions on the Google Group.
+
+[1]: http://www.sonarlint.org/atom/rules/index.html
+[2]: https://atom.io/packages/linter
