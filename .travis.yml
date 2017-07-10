@@ -9,7 +9,7 @@ before_install:
 
 script:
 - npm install
-- gulp clean deploy
+- gulp clean update-version deploy
 
 notifications:
   email: false
