@@ -77,7 +77,7 @@ gulp.task('deploy-zip', ['package', 'compute-hashes'], function() {
     }
     var packageJSON = getPackageJSON();
     var version = packageJSON.version;
-    var name = packageJSON.name;
+    var name = 'sonarlint-atom';
     var buildNumber = process.env.TRAVIS_BUILD_NUMBER;
     return gulp.src( '*.zip' )
         .pipe( artifactoryUpload( {
