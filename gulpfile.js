@@ -55,7 +55,7 @@ gulp.task('rename-packed', ['untgz-packed'], (done) =>
 gulp.task('package', ['rename-packed'], () => {
     var version = getPackageJSON().version;
     return gulp.src('dist/**')
-        .pipe(zip(`sonarlint-${version}.zip`))
+        .pipe(zip(`sonarlint-atom-${version}.zip`))
         .pipe(gulp.dest('.'))
 });
 
