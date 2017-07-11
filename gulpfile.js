@@ -77,7 +77,7 @@ gulp.task('deploy-zip', ['package', 'compute-hashes'], function() {
     }
     var packageJSON = getPackageJSON();
     var version = packageJSON.version;
-    var name = 'sonarlint-atom';
+    var name = getArtifactName(packageJSON);
     var buildNumber = process.env.TRAVIS_BUILD_NUMBER;
     return gulp.src( '*.zip' )
         .pipe( artifactoryUpload( {
@@ -107,7 +107,7 @@ gulp.task('deploy-buildinfo', ['compute-hashes'], function() {
     }
     var packageJSON = getPackageJSON();
     var version = packageJSON.version;
-    var name = 'sonarlint-atom';
+    var name = getArtifactName(packageJSON);
     var buildNumber = process.env.TRAVIS_BUILD_NUMBER;
     return request.put({
         url: process.env.ARTIFACTORY_URL + '/api/build',
@@ -121,6 +121,10 @@ gulp.task('deploy-buildinfo', ['compute-hashes'], function() {
 } );
 
 gulp.task('deploy', ['deploy-buildinfo', 'deploy-zip']);
+
+function getArtifactName(packageJSON) {
+    return 'sonarlint-atom';
+}
 
 function buildInfo(name, version, buildNumber, hashes) {
     return {
