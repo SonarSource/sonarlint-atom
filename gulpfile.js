@@ -107,7 +107,7 @@ gulp.task('deploy-buildinfo', ['compute-hashes'], function() {
     }
     var packageJSON = getPackageJSON();
     var version = packageJSON.version;
-    var name = packageJSON.name;
+    var name = 'sonarlint-atom';
     var buildNumber = process.env.TRAVIS_BUILD_NUMBER;
     return request.put({
         url: process.env.ARTIFACTORY_URL + '/api/build',
