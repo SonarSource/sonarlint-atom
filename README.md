@@ -4,7 +4,7 @@ SonarLint is an Atom extension that provides on-the-fly feedback to developers o
 
 ## How it works
 
-Simply open a JS, PHP or Python file, start coding, and you will start seeing issues reported by SonarLint. Issues are highlighted in your code, and also listed in the 'Linter' panel.
+Simply open a JS, PHP or Python file within a project, start coding, and you will start seeing issues reported by SonarLint. Issues are highlighted in your code, and also listed in the 'Linter' panel. Note that only files within a project are analyzed.
 
 ![sonarlint on-the-fly](https://github.com/SonarSource/sonarlint-atom/raw/master/images/sonarlint-atom.gif)
 
