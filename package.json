@@ -33,10 +33,10 @@
   "main": "./lib/sonarlint",
   "files": [
     "lib",
-    "images",
-    "files"
+    "images"
   ],
   "dependencies": {
+    "sonarlint-atom-files": "github:janos-ss/sonarlint-atom-files#437eadec6a16208f193a362ba60291e83548a378",
     "atom-languageclient": "github:SonarSource/atom-languageclient#0.1.2-1.0.0-2",
     "atom-linter": "^10.0.0",
     "expand-home-dir": "0.0.3",
@@ -44,14 +44,12 @@
     "path-exists": "^3.0.0"
   },
   "bundledDependencies": [
+    "sonarlint-atom-files",
     "atom-languageclient",
     "expand-home-dir",
     "find-java-home",
     "path-exists"
   ],
-  "scripts": {
-    "prepublish": "node ./scripts/setup.js"
-  },
   "consumedServices": {
     "linter-indie": {
       "versions": {
