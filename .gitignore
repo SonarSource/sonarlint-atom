@@ -10,5 +10,6 @@ dist
 *.zip
 *.tgz
 
-# project work files
-files
+# Fetched lazily
+plugins
+server
