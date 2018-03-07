@@ -93,26 +93,34 @@
   },
   "configSchema": {
     "javaHome": {
+      "title": "Java Home",
+      "description": "Specifies the folder path to the JRE 8 used to launch the SonarLint Language Server. For example `C:\\Program Files\\Java\\jre1.8.0_131`",
       "type": "string",
-      "default": "",
       "order": 1
     },
     "extraVmArgs": {
+      "title": "Java extra parameters",
+      "description": "Additional parameters passed to the JVM used to launch the SonarLint Language Server. For example `[\"-Xmx1024m\"]`. Configure in ~/.atom/config.cson and restart Atom",
       "type": "array",
       "order": 1
     },
     "testFilePattern": {
+      "title": "Test File Pattern",
+      "description": "Files whose name match this glob pattern are considered as test files",
       "type": "string",
       "default": "{**/test/**,**/*test*,**/*Test*}",
       "order": 1
     },
     "analyzerProperties": {
-      "description": "Extra parameters (key-value pairs) to pass to scanners. Configure in ~/.atom/config.cson and restart Atom",
+      "title": "Analyzer Properties",
+      "description": "Extra parameters (key-value pairs) to be passed to the analyzers. For example `{\"sonar.javascript.globals\": \"xxx\"}`. Configure in ~/.atom/config.cson and restart Atom",
       "type": "object",
       "default": {},
       "order": 2
     },
     "disableTelemetry": {
+      "title": "Disable Telemetry",
+      "description": "Disable sending anonymous usage statistics",
       "type": "boolean",
       "default": false,
       "order": 99
