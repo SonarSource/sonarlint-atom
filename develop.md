@@ -6,10 +6,10 @@ Working on this package
 
 ### General tips
 
-- Install dependencies with `npm install`
-- Remove the installed package from `~/.atom/packages` if exists
-- Create a symlink to this Git clone in `~/.atom/packages`
-- Have two windows open, one for dev and one for reloading
+- Install dependencies with `apm install`
+- Create a symlink to `~/.atom/dev/packages` using `apm link --dev`
+- Open your regular Atom for development
+- Open a second Atom in dev mode (Application: Open Dev command) for a preview of your changes
 - To try the changes, reload the dev window with `window:reload` command (`control shift F5` in Linux)
 - See also: http://flight-manual.atom.io/hacking-atom/sections/debugging/
 
