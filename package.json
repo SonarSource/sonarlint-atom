@@ -98,8 +98,7 @@
       "order": 1
     },
     "extraVmArgs": {
-      "type": "string",
-      "default": "",
+      "type": "array",
       "order": 1
     },
     "testFilePattern": {
