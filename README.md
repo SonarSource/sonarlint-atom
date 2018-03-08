@@ -4,17 +4,17 @@ SonarLint is an Atom extension that provides on-the-fly feedback to developers o
 
 ## How it works
 
-Simply open a JS, PHP or Python file within a project, start coding, and you will start seeing issues reported by SonarLint. Issues are highlighted in your code, and also listed in the 'Linter' panel. Note that only files within a project are analyzed.
+Simply open a JS, PHP or Python file within a project, start coding, and you will start seeing issues reported by SonarLint. Issues are highlighted in your code, and also listed in the 'Linter' or 'Diagnostics' panel. Note that only files within a project are analyzed.
 
 ![sonarlint on-the-fly](https://github.com/SonarSource/sonarlint-atom/raw/master/images/sonarlint-atom.gif)
 
-You can access the detailed rule description by hovering over a highlighted error, and right-click on the link icon. This will open the page of the rule description on [sonarlint.org][rules].
+You can access the detailed rule description by hovering over a highlighted error.
 
 You will benefit from the following code analyzers: [SonarJS][sonar-js], [SonarPHP][sonar-php] and [SonarPython][sonar-python]. You can find all available rules descriptions on the dedicated [SonarLint website][rules].
 
 ## Requirements
 
-SonarLint for Atom uses [Linter][linter] to display the list of errors and to produce the highlights in the editor.
+SonarLint for Atom uses the language server protocol, and works best with [Atom IDE][atom-ide]. But any other package compatible with [Linter][linter] should also be supported to display the list of errors and to produce the highlights in the editor.
 
 You also need a Java Runtime (JRE) 8 installed on your computer.
 
@@ -38,3 +38,4 @@ The preferred way to discuss about SonarLint is by posting on the [SonarLint Goo
 [sonar-python]: https://redirect.sonarsource.com/plugins/python.html
 [sonar-php]: https://redirect.sonarsource.com/plugins/php.html
 [ggroups]: https://groups.google.com/forum/#!forum/sonarlint
+[atom-ide]: https://ide.atom.io
