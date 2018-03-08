@@ -27,7 +27,8 @@
     "php",
     "python",
     "javascript",
-    "js"
+    "js",
+    "typescript"
   ],
   "qna": "https://groups.google.com/forum/#!forum/sonarlint",
   "main": "./lib/sonarlint",
@@ -51,6 +52,8 @@
   "enhancedScopes": [
     "source.js",
     "source.js.jsx",
+    "source.ts",
+    "source.tsx",
     "text.html.vue",
     "source.python",
     "text.html.php"
