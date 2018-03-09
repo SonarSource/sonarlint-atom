@@ -13,6 +13,7 @@ const run = require('gulp-run');
 const untar = require('gulp-untar');
 const gunzip = require('gulp-gunzip');
 const dateformat = require('dateformat');
+const sonarqubeScanner = require("sonarqube-scanner");
 //...
 
 gulp.task('clean', () =>
@@ -20,7 +21,6 @@ gulp.task('clean', () =>
     del.sync('*.zip');
     del.sync('*.tgz');
     del.sync('dist');
-    del.sync('files');
 });
 
 gulp.task('update-version', function() {
@@ -69,7 +69,7 @@ var hashes = {
 };
 
 gulp.task('compute-hashes', ['package'], () => gulp.src('*.zip').pipe(hashsum()));
- 
+
 gulp.task('deploy-zip', ['package', 'compute-hashes'], function() {
     if (process.env.TRAVIS_BRANCH != 'master') {
         gutil.log('Not on master, skip deploy-zip');
@@ -180,4 +180,59 @@ function hashsum() {
     }
 
     return through.obj(processFile);
+}
+
+gulp.task("sonarqube", callback => {
+  if (
+    process.env.TRAVIS_BRANCH === "master" &&
+    process.env.TRAVIS_PULL_REQUEST === "false"
+  ) {
+    runSonnarQubeScanner(callback, {
+      "sonar.analysis.sha1": process.env.TRAVIS_COMMIT
+    });
+  } else if (process.env.TRAVIS_PULL_REQUEST !== "false") {
+    runSonnarQubeScanner(callback, {
+      "sonar.analysis.prNumber": process.env.TRAVIS_PULL_REQUEST,
+      "sonar.analysis.sha1": process.env.TRAVIS_PULL_REQUEST_SHA,
+      "sonar.pullrequest.key": process.env.TRAVIS_PULL_REQUEST,
+      "sonar.pullrequest.provider": 'github',
+      "sonar.pullrequest.branch": process.env.TRAVIS_PULL_REQUEST_BRANCH,
+      "sonar.pullrequest.base": process.env.TRAVIS_BRANCH,
+      "sonar.pullrequest.github.repository": process.env.TRAVIS_REPO_SLUG
+    });
+  }
+});
+
+function runSonnarQubeScanner(callback, options = {}) {
+  const commonOptions = {
+    "sonar.projectKey": "org.sonarsource.sonarlint.atom:sonarlint-atom",
+    "sonar.projectName": "SonarLint for Atom",
+    "sonar.projectVersion": snapshotVersion(),
+    "sonar.exclusions": "node_modules/**, dist/**",
+    "sonar.analysis.buildNumber": process.env.TRAVIS_BUILD_NUMBER,
+    "sonar.analysis.pipeline": process.env.TRAVIS_BUILD_NUMBER,
+    "sonar.analysis.repository": process.env.TRAVIS_REPO_SLUG
+  };
+  sonarqubeScanner(
+    {
+      serverUrl: process.env.SONAR_HOST_URL,
+      token: process.env.SONAR_TOKEN,
+      options: {
+        ...commonOptions,
+        ...options
+      }
+    },
+    callback
+  );
+}
+
+function snapshotVersion() {
+  var buildNumber = process.env.TRAVIS_BUILD_NUMBER;
+  var packageJSON = getPackageJSON();
+  var version = packageJSON.version;
+  const buildIdx = version.lastIndexOf("-");
+  if (buildIdx >= 0 && buildNumber) {
+    return version.substr(0, buildIdx) + "-SNAPSHOT";
+  }
+  return version;
 }
