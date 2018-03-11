@@ -25,10 +25,11 @@ You will benefit from the following code analyzers: [SonarJS][sonar-js], [SonarT
 - SonarLint for Atom uses the language server protocol and relies on some packages to display the list of errors and highlight issues in the code. It works best with [Atom IDE][atom-ide] which is automatically proposed. But you can also use other compatible packages such as [Linter][linter] and [Nuclide][nuclide].
 
 - You also need a Java Runtime (JRE) 8 installed on your computer. SonarLint should automatically find it but you can also explicitly set the path where the JRE is installed using the 'sonarlint.javaHome' variable in Atom settings (`~/.atom/config.cson`). For example:
-
+```
     "*":
       sonarlint:
         javaHome: "C:\Program Files\Java\jre1.8.0_131"
+```
 
 ## Contributions and license
 
