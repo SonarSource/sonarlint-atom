@@ -8,7 +8,7 @@ Simply open a JS, TS, PHP or Python file within a project, start coding, and you
 
 ![sonarlint on-the-fly](https://github.com/SonarSource/sonarlint-atom/raw/master/images/sonarlint-atom.gif)
 
-You can access the detailed rule description directly from your editor by using the provided action when code actions are enabled in your IDE.
+You can access the detailed rule description directly from your editor by using, depending on the UI tools you have, the provided code action or the link to the [rules website][rules].
 
 ## Rules
 
@@ -42,6 +42,7 @@ The preferred way to discuss about SonarLint is by posting on the [SonarLint Goo
 [atom-ide]: https://ide.atom.io
 [linter]: https://atom.io/packages/linter
 [nuclide]: https://atom.io/packages/nuclide
+[rules]: https://rules.sonarsource.com
 [rules-js]: https://rules.sonarsource.com/javascript
 [rules-ts]: https://rules.sonarsource.com/typescript
 [rules-python]: https://rules.sonarsource.com/python
