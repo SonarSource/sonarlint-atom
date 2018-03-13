@@ -1,6 +1,6 @@
 {
   "name": "sonarlint",
-  "description": "On-the-fly bug and quality issues detection for JavaScript, Python and PHP",
+  "description": "On-the-fly bug and quality issues detection for JavaScript, TypeScript, Python and PHP",
   "version": "1.2.0-SNAPSHOT",
   "icon": "images/sonarlint_wave_128px.png",
   "publisher": "SonarSource",
