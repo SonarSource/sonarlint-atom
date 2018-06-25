@@ -1,14 +1,14 @@
 # SonarLint for Atom
 
-SonarLint is an Atom extension that provides on-the-fly feedback to developers on new bugs and quality issues injected into JavaScript, TypeScript, PHP and Python code.
+SonarLint is an IDE extension that helps you detect and fix quality issues as you write code in JavaScript, TypeScript, PHP and Python.
 
 ## How it works
 
-Simply open a JS, TS, PHP or Python file within a project, start coding, and you will start seeing issues reported by SonarLint. Issues are highlighted in your code, and also listed in the 'Diagnostics' or 'Linter' panel. Note that only files within a project are analyzed.
+SonarLint is an IDE extension that helps you detect and fix quality issues as you write code. Like a spell checker, SonarLint squiggles flaws so that they can be fixed before committing code. You can get it directly from the ATOM Marketplace, and it will then detect new bugs and quality issues as you code (JavaScript, TypeScript, PHP and Python). 
 
 ![sonarlint on-the-fly](https://github.com/SonarSource/sonarlint-atom/raw/master/images/sonarlint-atom.gif)
 
-You can access the detailed rule description directly from your editor by using, depending on the UI tools you have, the provided code action or the link to the [rules website][rules].
+Issues are highlighted in your code, and also listed in the 'Diagnostics' or 'Linter' panel. Note that only files within a project are analyzed. You can access the detailed rule description directly from your editor by using, depending on the UI tools you have, the provided code action or the link to the [rules website][rules].
 
 ## Rules
 
