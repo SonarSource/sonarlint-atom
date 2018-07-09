@@ -37,7 +37,7 @@ SonarLint for Atom is open source under the LGPL v3 license. Feel free to submit
 
 ## Feedback
 
-The preferred way to discuss about SonarLint is by posting on the [SonarLint Google Group][ggroups]. Feel free to ask questions, report issues, and give suggestions on the Google Group.
+The preferred way to discuss about SonarLint is by posting on the [SonarSource Community Forum][community-forum]. Feel free to ask questions, report issues, and give suggestions.
 
 [atom-ide]: https://ide.atom.io
 [linter]: https://atom.io/packages/linter
@@ -51,4 +51,4 @@ The preferred way to discuss about SonarLint is by posting on the [SonarLint Goo
 [sonar-ts]: https://redirect.sonarsource.com/plugins/typescript.html
 [sonar-python]: https://redirect.sonarsource.com/plugins/python.html
 [sonar-php]: https://redirect.sonarsource.com/plugins/php.html
-[ggroups]: https://groups.google.com/forum/#!forum/sonarlint
+[community-forum]: https://community.sonarsource.com/
