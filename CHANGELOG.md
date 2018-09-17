@@ -1,3 +1,6 @@
+## 1.2.0
+* Updated all code analyzers
+
 ## 1.1.0
 * TypeScript support
 * Updated JS, PHP and Python analyzers
