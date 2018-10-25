@@ -41,7 +41,7 @@
     "atom-ide-ui"
   ],
   "dependencies": {
-    "atom-languageclient": "0.9.6",
+    "atom-languageclient": "0.9.7",
     "atom-linter": "^10.0.0",
     "etch": "^0.9.3",
     "expand-home-dir": "0.0.3",
