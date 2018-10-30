@@ -88,7 +88,7 @@
     }
   },
   "devDependencies": {
-    "sonarqube-scanner": "2.0.2",
+    "sonarqube-scanner": "2.1.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-artifactory-upload": "^1.3.0",
