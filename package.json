@@ -1,7 +1,7 @@
 {
   "name": "sonarlint",
   "description": "On-the-fly bug and quality issues detection for JavaScript, TypeScript, Python and PHP",
-  "version": "1.2.1",
+  "version": "1.2.0",
   "icon": "images/sonarlint_wave_128px.png",
   "publisher": "SonarSource",
   "homepage": "http://www.sonarlint.org/atom/index.html",
