@@ -1,5 +1,8 @@
 # SonarLint for Atom
 
+### :warning: SonarLint for Atom is now decommissioned.
+_See [the community announcement](https://community.sonarsource.com/t/decommissioning-sonarlint-for-atom/8192) for more details_
+
 SonarLint is an IDE extension that helps you detect and fix quality issues as you write code in JavaScript, TypeScript, PHP and Python.
 
 ## How it works
